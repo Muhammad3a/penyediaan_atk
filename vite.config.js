@@ -7,6 +7,8 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
+                'public/css/filament/filament/app.css',
+                'public/js/filament/filament/app.js',
             ],
             refresh: true,
         }),
