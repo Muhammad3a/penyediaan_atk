@@ -7,9 +7,6 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                // tambahkan jalur ini:
-                'vendor/filament/filament/resources/css/app.css',
-                'vendor/filament/filament/resources/js/app.js',
             ],
             refresh: true,
         }),
