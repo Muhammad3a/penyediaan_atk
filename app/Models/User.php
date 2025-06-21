@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 
 class User extends Authenticatable implements FilamentUser
 {
@@ -60,7 +61,7 @@ class User extends Authenticatable implements FilamentUser
             ->implode('');
     }
 
-    public function canAccessFilament(): bool
+   public function canAccessPanel(Panel $panel): bool
     {
         // Ganti sesuai email admin kamu
         return $this->email === 'admin@gmail.com';
