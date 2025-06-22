@@ -1,0 +1,26 @@
+# Laravel specific ignores
+node_modules
+vendor
+.env
+.env.*
+storage
+public/storage
+public/build
+
+# Keep filament assets
+/public/css/*
+!/public/css/filament
+/public/js/*
+!/public/js/filament
+
+# Vite build not needed
+/public/hot
+
+# IDE / tool files
+*.log
+*.sqlite
+*.zip
+/.idea
+/.vscode
+/.phpunit.cache
+.phpunit.result.cache
