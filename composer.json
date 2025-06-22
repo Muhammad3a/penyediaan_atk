@@ -53,7 +53,7 @@
             "@php artisan storage:link",
             "@php artisan filament:assets",
             "@php artisan config:cache",
-            "@php artisan optimize:clear",
+            "@php artisan optimize:clear"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
