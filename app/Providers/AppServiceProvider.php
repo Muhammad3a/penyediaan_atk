@@ -24,5 +24,9 @@ class AppServiceProvider extends ServiceProvider
             if (env('APP_ENV') === 'production') {
             URL::forceScheme('https');
         }
+
+        if (! is_dir(storage_path('app/public/uploads'))) {
+            mkdir(storage_path('app/public/uploads'), 0755, true);
+        }
     }
 }
