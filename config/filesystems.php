@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DISK', 'local'),
+    'default' => env('FILESYSTEM_DISK', 'public'),
 
     /*
     |--------------------------------------------------------------------------
@@ -38,6 +38,7 @@ return [
             'report' => false,
         ],
 
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -46,6 +47,13 @@ return [
             'throw' => false,
             'report' => false,
         ],
+
+         'private' => [
+                'driver' => 'local',
+                'root' => storage_path('app/private'),
+                'throw' => false,
+                'report' => false,
+            ],
 
         's3' => [
             'driver' => 's3',
