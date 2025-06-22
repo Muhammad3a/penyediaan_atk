@@ -39,8 +39,7 @@ class FormResource extends Resource
                             ->label('Nama Barang'),
 
                         Forms\Components\FileUpload::make('gambar')                            
-                            ->label('Gambar')
-                            ->directory('gambar-atk')
+                            ->label('Gambar')                           
                             ->image()
                             ->visibility('public'),
 
