@@ -24,9 +24,5 @@ class AppServiceProvider extends ServiceProvider
             if (env('APP_ENV') === 'production') {
             URL::forceScheme('https');
         }
-
-        if (! is_dir(storage_path('app/public/gambar-atk'))) {
-            mkdir(storage_path('app/public/gambar-atk'), 0755, true);
-        }
     }
 }
