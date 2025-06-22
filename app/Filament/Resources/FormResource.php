@@ -39,6 +39,9 @@ class FormResource extends Resource
                             ->label('Nama Barang'),
 
                         Forms\Components\FileUpload::make('gambar')                            
+                            ->afterStateUpdated(function ($state) {
+                                    \Log::info('Uploaded image', ['state' => $state]);
+                                })
                             ->label('Gambar')                           
                             ->image()
                             ->visibility('public'),
