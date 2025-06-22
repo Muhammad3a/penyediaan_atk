@@ -42,7 +42,8 @@ class FormResource extends Resource
                             ->afterStateUpdated(function ($state) {
                                     \Log::info('Uploaded image', ['state' => $state]);
                                 })
-                            ->label('Gambar')                           
+                            ->label('Gambar')
+                            ->directory('gambar-atk')
                             ->image()
                             ->visibility('public'),
 
