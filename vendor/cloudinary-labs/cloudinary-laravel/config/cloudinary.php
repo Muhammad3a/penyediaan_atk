@@ -9,6 +9,9 @@
 
 return [
 
+    'cloud_url' => 'cloudinary://288273421273549:PxwWLfcEss0ESKFSRPstxLDoF7E@dwut5zjox',
+
+
     /*
     |--------------------------------------------------------------------------
     | Cloudinary Configuration
