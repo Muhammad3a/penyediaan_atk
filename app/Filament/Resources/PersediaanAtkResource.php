@@ -41,31 +41,11 @@ class PersediaanAtkResource extends Resource
 
                         Forms\Components\FileUpload::make('gambar')                            
                             ->label('Gambar')
-                              ->image()
-                              ->disk('cloudinary')
-                              ->visibility('public')
-                              ->directory('gambar-barang')
-                              ->preserveFilenames(),
+                            ->image(),
 
                         Forms\Components\TextInput::make('stok')
                             ->numeric()
                             ->label('Stok'),
-
-                        // Forms\Components\Group::make(
-                        //     collect(range(1, 30))->map(fn ($i) =>
-                        //         Forms\Components\TextInput::make("day_$i")
-                        //             ->label("Tgl $i")
-                        //             ->numeric()
-                        //             ->default(0)
-                        //         )->toArray()
-                        //     )->columns(5),
-
-                            // Forms\Components\TextInput::make('stok2')
-                            // ->numeric()
-                            // ->label('Stok Akhir')
-                            // ->disabled()
-                            // ->dehydrated(false) 
-                            // ->hint('Akan dihitung otomatis berdasarkan isian pertanggal'),
                         
                     ]);
             }
