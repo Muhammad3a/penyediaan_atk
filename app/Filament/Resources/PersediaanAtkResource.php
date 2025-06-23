@@ -41,12 +41,11 @@ class PersediaanAtkResource extends Resource
 
                         Forms\Components\FileUpload::make('gambar')                            
                             ->label('Gambar')
-                             ->storeFiles(false)
-                             ->image()
-                             ->getUploadedFileNameForStorageUsing(fn ($file) =>
-                                 Cloudinary::upload($file->getRealPath())->getSecurePath()
-                             )
-                             ->dehydrateStateUsing(fn ($state) => $state),
+                              ->image()
+                              ->disk('cloudinary')
+                              ->visibility('public')
+                              ->directory('gambar-barang')
+                              ->preserveFilenames(),
 
                         Forms\Components\TextInput::make('stok')
                             ->numeric()

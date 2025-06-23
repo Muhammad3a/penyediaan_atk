@@ -40,13 +40,12 @@ class GimmickResource extends Resource
                             ->label('Nama Barang'),
 
                         Forms\Components\FileUpload::make('gambar')                            
-                            ->label('Gambar')
-                             ->storeFiles(false)
-                             ->image()
-                             ->getUploadedFileNameForStorageUsing(fn ($file) =>
-                                 Cloudinary::upload($file->getRealPath())->getSecurePath()
-                             )
-                             ->dehydrateStateUsing(fn ($state) => $state),
+                              ->label('Gambar')
+                              ->image()
+                              ->disk('cloudinary')
+                              ->visibility('public')
+                              ->directory('gambar-barang')
+                              ->preserveFilenames(),
 
                         Forms\Components\TextInput::make('stok')
                             ->numeric()
