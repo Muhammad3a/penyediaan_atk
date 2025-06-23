@@ -16,6 +16,7 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextInputColumn;
 use Filament\Tables\Filters\SelectFilter;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class GimmickResource extends Resource
 {
@@ -40,11 +41,12 @@ class GimmickResource extends Resource
 
                         Forms\Components\FileUpload::make('gambar')                            
                             ->label('Gambar')
-                            ->disk('cloudinary')
-                            ->visibility('public')
-                            ->directory('uploads')
-                            ->image()
-                            ->visibility('public'),
+                             ->storeFiles(false)
+                             ->image()
+                             ->getUploadedFileNameForStorageUsing(fn ($file) =>
+                                 Cloudinary::upload($file->getRealPath())->getSecurePath()
+                             )
+                             ->dehydrateStateUsing(fn ($state) => $state),
 
                         Forms\Components\TextInput::make('stok')
                             ->numeric()
