@@ -20,6 +20,13 @@
       0 => 'BladeUI\\Icons\\BladeIconsServiceProvider',
     ),
   ),
+  'cloudinary-labs/cloudinary-laravel' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'CloudinaryLabs\\CloudinaryLaravel\\CloudinaryServiceProvider',
+    ),
+  ),
   'filament/actions' => 
   array (
     'providers' => 
