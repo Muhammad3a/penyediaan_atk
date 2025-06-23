@@ -2,9 +2,9 @@
 nixPkgs = [
   "php83",
   "php83Packages.composer",
-  "nodejs_18",
-  "npm"
+  "nodejs_18"
 ]
+
 
 [phases.install]
 commands = [
