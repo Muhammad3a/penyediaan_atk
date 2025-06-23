@@ -9,7 +9,6 @@ nixPkgs = [
 [phases.install]
 commands = [
   "composer install --no-interaction --prefer-dist --optimize-autoloader",
-  "php artisan storage:link",
   "npm ci"
 ]
 
