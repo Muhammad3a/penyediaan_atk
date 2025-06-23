@@ -40,7 +40,9 @@ class PersediaanAtkResource extends Resource
 
                         Forms\Components\FileUpload::make('gambar')                            
                             ->label('Gambar')
-                            ->directory('gambar-atk')
+                            ->disk('cloudinary')
+                            ->visibility('public')
+                            ->directory('uploads')
                             ->image()
                             ->visibility('public'),
 

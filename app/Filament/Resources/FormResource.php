@@ -38,12 +38,11 @@ class FormResource extends Resource
                             ->required()
                             ->label('Nama Barang'),
 
-                        Forms\Components\FileUpload::make('gambar')                            
-                            ->afterStateUpdated(function ($state) {
-                                    \Log::info('Uploaded image', ['state' => $state]);
-                                })
+                        Forms\Components\FileUpload::make('gambar')                                                        
                             ->label('Gambar')
-                            ->directory('gambar-atk')
+                            ->disk('cloudinary')
+                            ->visibility('public')
+                            ->directory('uploads')
                             ->image()
                             ->visibility('public'),
 
